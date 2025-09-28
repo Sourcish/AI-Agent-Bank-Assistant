@@ -4,9 +4,7 @@ from google.adk.planners import BuiltInPlanner
 from google.genai import types
 from vertexai.preview import rag
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 ask_vertex_retrieval = VertexAiRagRetrieval(
     name='retrieve_rag_documentation',
     description=(
@@ -14,7 +12,7 @@ ask_vertex_retrieval = VertexAiRagRetrieval(
     ),
     rag_resources=[
         rag.RagResource(
-            rag_corpus=os.getenv("RAG_CORPUS"),
+            rag_corpus="projects/aidevproject1337/locations/us-east4/ragCorpora/6917529027641081856",
         )
     ]
 )
